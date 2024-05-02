@@ -36,8 +36,8 @@ setup(
     python_requires='>=3.8',
     entry_points={
         'console_scripts': [
-            'ccalcule-ai=calcul.calculator_client:main'
-            'scalcul-ai=calcul.calculator_server:main',
+            'ccalcule-ai=calcul.calculator_client:main',
+            'scalcul-ai=calcul.calculator_server:main'
         ],
     },
     zip_safe=False,
