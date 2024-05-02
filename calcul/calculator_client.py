@@ -27,6 +27,9 @@ def run():
             print(f"An error occurred: {e}")
     
     channel.close()
-        
+
+def main():
+    run()
+    
 if __name__ == '__main__':
     run()
