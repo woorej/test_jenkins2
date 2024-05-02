@@ -1,3 +1,0 @@
-[console_scripts]
-ccalcule-ai = calcul.calculator_client:main
-scalcul-ai = calcul.calculator_server:main
