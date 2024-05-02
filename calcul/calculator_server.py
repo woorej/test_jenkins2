@@ -3,7 +3,7 @@ import grpc
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'proto')))
-#print(sys.path)
+
 import calculator_pb2 as calculator_pb2
 import calculator_pb2_grpc as calculator_pb2_grpc
 
@@ -11,7 +11,7 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
     def __init__(self) -> None:
         pass
     
-    def Calcul(self, request, cotext):
+    def Calcul(self, request, context):
         
         result = calculator_pb2.Response()
         if request.cal == 'add':
@@ -34,7 +34,10 @@ def serve():
     print("Server Start!")
     server.start()
     server.wait_for_termination()
+
+def main():
+    serve()
     
 if __name__ == '__main__':
-    serve()
+    main()
     
