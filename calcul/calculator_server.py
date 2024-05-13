@@ -15,6 +15,7 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
         
         result = calculator_pb2.Response()
         if request.cal == 'add':
+            print(f"requested: {request.num1} {request.num2}")
             ansr = self.add(request.num1, request.num2)
             result.result = f"{request.num1} + {request.num2} = {ansr}"
         else:
