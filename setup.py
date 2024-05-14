@@ -22,7 +22,7 @@ with open(version_path) as f:
 exec(version_line)
 
 setup(
-    name="calcualtor",
+    name="calculator",
     version = __version__,
     author='woojae',
     description='test_jenkins_model',
