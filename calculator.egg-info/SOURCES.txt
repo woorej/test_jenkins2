@@ -1,0 +1,15 @@
+README.md
+setup.py
+./calcul/__init__.py
+./calcul/calculator_client.py
+./calcul/calculator_server.py
+./proto/__init__.py
+./proto/calculator_pb2.py
+./proto/calculator_pb2_grpc.py
+calculator.egg-info/PKG-INFO
+calculator.egg-info/SOURCES.txt
+calculator.egg-info/dependency_links.txt
+calculator.egg-info/entry_points.txt
+calculator.egg-info/not-zip-safe
+calculator.egg-info/requires.txt
+calculator.egg-info/top_level.txt
