@@ -27,6 +27,9 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
     def add(self, num1, num2):
         return num1 + num2
     
+    def subtract(self, num1, num2):
+        pass
+    
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
