@@ -18,17 +18,20 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
             print(f"requested: {request.num1} {request.num2}")
             ansr = self.add(request.num1, request.num2)
             result.result = f"{request.num1} + {request.num2} = {ansr}"
+        elif request.cal == 'sub':
+            print(f"requested: {request.num1} {request.num2}")
+            ansr = self.subtract(request.num1, request.num2)
+            result.result = f"{request.num1} - {request.num2} = {ansr}"
         else:
             result.result = "Not supported operation"
         
         return result
         
-        
     def add(self, num1, num2):
         return num1 + num2
     
     def subtract(self, num1, num2):
-        pass
+        return num1 - num2
     
 
 def serve():
