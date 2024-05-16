@@ -7,14 +7,14 @@ pipeline {
         REPO_URL = 'https://github.com/woorej/test_jenkins2.git'
         PROJECT_DIR = '/home/groupai/workspace/test_jenkins2'
     }
-    // stages {
-    //     stage('Checkout') {
-    //         steps {
-    //             checkout scm: [ $class: 'GitSCM', branches: [[name: '*/master']],
-    //                             userRemoteConfigs: [[credentialsId: 'server_7',
-    //                             url: '${REPO_URL}']]]
-    //         }
-    //     }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm: [ $class: 'GitSCM', branches: [[name: '*/master']],
+                                userRemoteConfigs: [[credentialsId: 'server_7',
+                                url: 'https://github.com/woorej/test_jenkins2.git']]]
+            }
+        }
         stage('Prepare Environment') {
             steps {
                 script {
