@@ -26,6 +26,10 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
             print(f"requested: {request.num1} {request.num2}")
             ansr = self.multiply(request.num1, request.num2)
             result.result = f"{request.num1} x {request.num2} = {ansr}"
+        elif request.mod == 'mod':
+            print(f"requested: {request.num1} {request.num2}")
+            ansr = self.multiply(request.num1, request.num2)
+            result.result = f"{request.num1} % {request.num2} = {ansr}"
         else:
             result.result = "Not supported operation"
         
@@ -40,7 +44,9 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
     def multiply(self, num1, num2):
         return num1 * num2
     
-    
+    def mode(self, num1, num2):
+        return num1 % num2
+
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     calculator_pb2_grpc.add_CalculatorServicer_to_server(Calculator(), server)
