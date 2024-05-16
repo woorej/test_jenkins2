@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'p
 
 import calculator_pb2 as calculator_pb2
 import calculator_pb2_grpc as calculator_pb2_grpc
-# test!
+# test! 9
 class Calculator(calculator_pb2_grpc.CalculatorServicer):
     def __init__(self) -> None:
         pass
@@ -24,7 +24,7 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
             result.result = f"{request.num1} - {request.num2} = {ansr}"
         elif request.cal == 'mul':
             print(f"requested: {request.num1} {request.num2}")
-            ansr = self.subtract(request.num1, request.num2)
+            ansr = self.multiply(request.num1, request.num2)
             result.result = f"{request.num1} x {request.num2} = {ansr}"
         else:
             result.result = "Not supported operation"
