@@ -46,6 +46,9 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
     
     def mode(self, num1, num2):
         return num1 % num2
+    
+    def another(self, num1, num2):
+        pass
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
