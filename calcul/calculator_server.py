@@ -26,7 +26,7 @@ class Calculator(calculator_pb2_grpc.CalculatorServicer):
             print(f"requested: {request.num1} {request.num2}")
             ansr = self.multiply(request.num1, request.num2)
             result.result = f"{request.num1} x {request.num2} = {ansr}"
-        elif request.cal == 'mod':
+        elif request.cal == 'mode':
             print(f"requested: {request.num1} {request.num2}")
             ansr = self.mode(request.num1, request.num2)
             result.result = f"{request.num1} % {request.num2} = {ansr}"
